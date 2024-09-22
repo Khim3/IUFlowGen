@@ -1,29 +1,32 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import time, ollama
+import  ollama
+import PyPDF2
 
+def parse_pdf(file):
+    reader = PyPDF2.PdfReader(file)
+    text = ""
+    for page_num in range(len(reader.pages)):
+        page = reader.pages[page_num]
+        text += page.extract_text()
+    return text
+
+# Function to parse DOCX files
+# def parse_docx(file):
+#     doc = docx.Document(file)
+#     full_text = []
+#     for para in doc.paragraphs:
+#         full_text.append(para.text)
+#     return '\n'.join(full_text)
+
+# Function to parse TXT files
+def parse_txt(file):
+    return file.read().decode("utf-8")
+st.set_page_config(page_title="RAG system", page_icon="🧠", layout="wide")    
 def main():
-    st.title("RAG System with Chatbot Interface")
-    # create sidebar
-    st.sidebar.title("Customize the RAG system")
-    # create dropdown for selecting the embedding models
-    embedding_model = st.sidebar.selectbox("Select the embedding model", [ "llama3.1", 'Phi3.5'])
-    # create a dropdown to select LLM model 
-    llm_model = st.sidebar.selectbox("Select the LLM model", ["llama3.1", "Phi3.5"])
-    # create a button to upload the data
-    uploaded_file = st.sidebar.file_uploader("Choose a file")    
-    
-    # button to generate embeddings
-    generate_embeddings = st.sidebar.button("Generate embeddings")   
-    if generate_embeddings:
-        st.sidebar.write("Embeddings generated")
-    
-    # create button
-    button = st.sidebar.button("Run")
-    if button and embedding_model != "Choose 1 model": 
-        st.sidebar.write('Choose model:', embedding_model)
-        
+    st.title("System demo")
+    # page setup
    # initialize history
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
@@ -32,7 +35,7 @@ def main():
         st.session_state["model"] = ""
 
     models = [model["name"] for model in ollama.list()["models"]]
-    st.session_state["model"] = st.selectbox("Choose your model", models)
+    #st.session_state["model"] = st.sidebar.selectbox("Choose your model", models)
         
     def model_res_generator():
         stream = ollama.chat(
@@ -59,5 +62,24 @@ def main():
             message = st.write_stream(model_res_generator())
             st.session_state["messages"].append({"role": "assistant", "content": message})
     
+    st.sidebar.title("Customize the RAG system")
+    # create dropdown for selecting the embedding models
+    embedding_model = st.sidebar.selectbox("Select the embedding model", [ 'Phi3.5'])
+    # create a dropdown to select LLM model 
+    llm_model = st.sidebar.selectbox("Select the LLM model", ["Phi3.5"])
+    # create a button to upload the data
+    uploaded_file = st.sidebar.file_uploader("Choose a file", type=['pdf', 'docx', 'txt'])    
+    
+    # button to generate embeddings
+    generate_embeddings = st.sidebar.button("Generate embeddings")   
+    if generate_embeddings:
+        st.sidebar.write("Embeddings generated")
+    
+    # create button
+    button = st.sidebar.button("Run")
+    if button and embedding_model != "Choose 1 model": 
+        st.sidebar.write('Choose model:', embedding_model)
+        
+        
 if __name__ == '__main__':
     main()
