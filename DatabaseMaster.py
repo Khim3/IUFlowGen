@@ -2,76 +2,84 @@ import psycopg2
 from psycopg2 import sql
 
 class DatabaseMaster:
-    def __init__(self, dbname, user, password, host='localhost', port='5432'):
-        """Initialize the connection to the PostgreSQL database."""
+    def __init__(self, dbname, user, password, host="localhost", port="5432"):
+        """
+        Initialize the DatabaseMaster with connection parameters.
+        
+        :param dbname: Name of the database to connect to.
+        :param user: Username used to authenticate.
+        :param password: Password used to authenticate.
+        :param host: Database host address (defaults to localhost).
+        :param port: Connection port number (defaults to 5432).
+        """
         self.dbname = dbname
         self.user = user
         self.password = password
         self.host = host
         self.port = port
-        self.conn = None
-        self.cursor = None
-        self.connect()
+        self.connection = None
 
     def connect(self):
-        """Establish a connection to the database."""
+        """
+        Establish a connection to the PostgreSQL database.
+        """
         try:
-            self.conn = psycopg2.connect(
+            self.connection = psycopg2.connect(
                 dbname=self.dbname,
                 user=self.user,
                 password=self.password,
                 host=self.host,
                 port=self.port
             )
-            self.cursor = self.conn.cursor()
-            print("Connection to database established.")
-        except Exception as e:
-            print(f"Error connecting to database: {e}")
-
-    def execute_query(self, query, params=None):
-        """Execute a SQL query."""
-        try:
-            self.cursor.execute(query, params)
-            self.conn.commit()
-            print("Query executed successfully.")
-        except Exception as e:
-            print(f"Error executing query: {e}")
-
-    def fetch_results(self):
-        """Fetch all results from the last query."""
-        try:
-            return self.cursor.fetchall()
-        except Exception as e:
-            print(f"Error fetching results: {e}")
-            return []
+            print("Connection to PostgreSQL established successfully.")
+        except psycopg2.DatabaseError as error:
+            print(f"Error: Unable to connect to the database: {error}")
+            self.connection = None
 
     def close(self):
-        """Close the database connection."""
-        if self.cursor:
-            self.cursor.close()
-        if self.conn:
-            self.conn.close()
-        print("Connection closed.")
+        """
+        Close the connection to the PostgreSQL database.
+        """
+        if self.connection:
+            self.connection.close()
+            print("Database connection closed.")
+        else:
+            print("No active connection to close.")
 
-# Example usage
-if __name__ == "__main__":
-    # Replace with your actual database credentials
-    db = DatabaseMaster(dbname='vector_test_db', user='postgres', password='yourpassword')
+    def execute_query(self, query, params=None):
+        """
+        Execute a SQL query and return the result.
 
-    # Example: Insert data
-    insert_query = "INSERT INTO test_vectors (name, embedding) VALUES (%s, %s);"
-    db.execute_query(insert_query, ('Vector4', '[10.0, 11.0, 12.0]'))
+        :param query: SQL query to execute.
+        :param params: Optional parameters for the SQL query.
+        :return: Query result (if any).
+        """
+        if self.connection:
+            with self.connection.cursor() as cursor:
+                try:
+                    cursor.execute(query, params)
+                    self.connection.commit()
+                    return cursor.fetchall() if cursor.description else None
+                except psycopg2.DatabaseError as error:
+                    print(f"Error executing query: {error}")
+                    self.connection.rollback()
+        else:
+            print("No active database connection.")
 
-    # Example: Select data
-    select_query = "SELECT * FROM test_vectors;"
-    db.execute_query(select_query)
-    results = db.fetch_results()
-    for row in results:
-        print(row)
+# Example Usage:
 
-    # Close the connection
-    db.close()
+# Initialize the DatabaseMaster with your PostgreSQL credentials for vector_db
+db = DatabaseMaster(dbname="vector_db", user="postgres", password="0402")
 
+# Connect to the PostgreSQL database
+db.connect()
 
+# Example query (replace with your own SQL query)
+query = "SELECT * FROM items;"  # Adjust based on your table name and structure
+result = db.execute_query(query)
 
+if result:
+    print(result)
 
+# Close the connection
+db.close()
