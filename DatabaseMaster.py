@@ -3,15 +3,6 @@ from psycopg2 import sql
 
 class DatabaseMaster:
     def __init__(self, dbname, user, password, host="localhost", port="5432"):
-        """
-        Initialize the DatabaseMaster with connection parameters.
-        
-        :param dbname: Name of the database to connect to.
-        :param user: Username used to authenticate.
-        :param password: Password used to authenticate.
-        :param host: Database host address (defaults to localhost).
-        :param port: Connection port number (defaults to 5432).
-        """
         self.dbname = dbname
         self.user = user
         self.password = password
@@ -75,7 +66,14 @@ db = DatabaseMaster(dbname="vector_db", user="postgres", password="0402")
 db.connect()
 
 # Example query (replace with your own SQL query)
-query = "SELECT * FROM items;"  # Adjust based on your table name and structure
+query = """
+INSERT INTO items (id, embedding) VALUES 
+(2, '[0.1,0.2,0.3]'),
+(3, '[0.1,0.2,0.3]'),
+(4, '[0.1,0.2,0.3]'),
+(5, '[0.1,0.2,0.3]'),
+(6, '[0.1,0.2,0.3]');
+SELECT * FROM items;""" 
 result = db.execute_query(query)
 
 if result:

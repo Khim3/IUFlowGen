@@ -12,13 +12,6 @@ def parse_pdf(file):
         text += page.extract_text()
     return text
 
-# Function to parse DOCX files
-# def parse_docx(file):
-#     doc = docx.Document(file)
-#     full_text = []
-#     for para in doc.paragraphs:
-#         full_text.append(para.text)
-#     return '\n'.join(full_text)
 
 # Function to parse TXT files
 def parse_txt(file):
@@ -26,7 +19,6 @@ def parse_txt(file):
 st.set_page_config(page_title="RAG system", page_icon="🧠", layout="wide")    
 def main():
     st.title("System demo")
-    # page setup
    # initialize history
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
@@ -35,8 +27,9 @@ def main():
         st.session_state["model"] = ""
 
     models = [model["name"] for model in ollama.list()["models"]]
-    #st.session_state["model"] = st.sidebar.selectbox("Choose your model", models)
-        
+    st.session_state["model"] = st.sidebar.selectbox("Choose your model", models)
+    # Set the default model to "phi3.5"
+    #st.session_state["model"] = "phi3.5"
     def model_res_generator():
         stream = ollama.chat(
             model=st.session_state["model"],
