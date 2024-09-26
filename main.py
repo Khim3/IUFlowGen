@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import  ollama
 import PyPDF2
-
+from sentence_transformers import SentenceTransformer
 def parse_pdf(file):
     reader = PyPDF2.PdfReader(file)
     text = ""
@@ -12,13 +12,20 @@ def parse_pdf(file):
         text += page.extract_text()
     return text
 
+def parse_docx(file):
+    text = ""
+    for paragraph in file.paragraphs:
+        text += paragraph.text
+    return text
 
 # Function to parse TXT files
 def parse_txt(file):
     return file.read().decode("utf-8")
-st.set_page_config(page_title="RAG system", page_icon="🧠", layout="wide")    
+
+st.set_page_config(page_title="RAG system", page_icon="🧠", layout="wide") 
+   
 def main():
-    st.title("System demo")
+    st.title("RAG system output flowchart") 
    # initialize history
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
@@ -44,7 +51,7 @@ def main():
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
-    if prompt := st.chat_input("What is up?"):
+    if prompt := st.chat_input("What is on your mind?"):
         # add latest message to history in format {role, content}
         st.session_state["messages"].append({"role": "user", "content": prompt})
 
@@ -55,6 +62,7 @@ def main():
             message = st.write_stream(model_res_generator())
             st.session_state["messages"].append({"role": "assistant", "content": message})
     
+    # create a sidebar
     st.sidebar.title("Customize the RAG system")
     # create dropdown for selecting the embedding models
     embedding_model = st.sidebar.selectbox("Select the embedding model", [ 'Phi3.5'])
@@ -65,14 +73,23 @@ def main():
     
     # button to generate embeddings
     generate_embeddings = st.sidebar.button("Generate embeddings")   
-    if generate_embeddings:
-        st.sidebar.write("Embeddings generated")
+    model = SentenceTransformer('thenlper/gte-large')
+    if generate_embeddings and uploaded_file:
+        if uploaded_file.type == "application/pdf":
+            text = parse_pdf(uploaded_file)
+        elif uploaded_file.type == "text/plain":
+            text = parse_txt(uploaded_file)
+        else:
+            text = None
+        if text:
+            model = SentenceTransformer(embedding_model)
+            embeddings = model.encode(text)
+            print(embeddings)
+        else:
+            print("No text found in the document")
+    # store the embeddings in a to database
+ 
     
-    # create button
-    button = st.sidebar.button("Run")
-    if button and embedding_model != "Choose 1 model": 
-        st.sidebar.write('Choose model:', embedding_model)
-        
-        
+    
 if __name__ == '__main__':
     main()

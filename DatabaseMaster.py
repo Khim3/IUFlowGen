@@ -57,27 +57,17 @@ class DatabaseMaster:
         else:
             print("No active database connection.")
 
-# Example Usage:
-
 # Initialize the DatabaseMaster with your PostgreSQL credentials for vector_db
 db = DatabaseMaster(dbname="vector_db", user="postgres", password="0402")
 
 # Connect to the PostgreSQL database
 db.connect()
 
-# Example query (replace with your own SQL query)
-query = """
-INSERT INTO items (id, embedding) VALUES 
-(2, '[0.1,0.2,0.3]'),
-(3, '[0.1,0.2,0.3]'),
-(4, '[0.1,0.2,0.3]'),
-(5, '[0.1,0.2,0.3]'),
-(6, '[0.1,0.2,0.3]');
-SELECT * FROM items;""" 
-result = db.execute_query(query)
-
-if result:
-    print(result)
+# Check if the pdf_embeddings table exists
+if db.check_table_exists('pdf_embeddings'):
+    print("The pdf_embeddings table exists.")
+else:
+    print("The pdf_embeddings table does not exist.")
 
 # Close the connection
 db.close()
