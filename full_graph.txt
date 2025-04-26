@@ -1,0 +1,84 @@
+digraph G {
+    compound=true;
+    rankdir=TB;
+    bgcolor="#EDEDED"; 
+    node [
+        style=filled,
+        fillcolor="#FFF3E0",
+        color="#FFB74D",  
+        fontname="Helvetica",
+    ];
+
+    edge [
+        fontname="Helvetica",
+        color="#1976D2",   
+        penwidth=2,
+        arrowsize=1.2,
+    ];
+    
+
+    subgraph cluster_1 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Boil the Water";  actor_1_1 [label="You"];  entity_1_1 [label="Large pot"];  entity_1_2 [label="Water"];  entity_1_3 [label="Stove"];    actor_1_1 -> entity_1_1 [label="Fill a large pot"];  actor_1_1 -> entity_1_2 [label="Use about 4-6 cups per serving of pasta in the large pot"];  actor_1_1 -> entity_1_3 [label="Place the large pot on the stove over high heat"];  actor_1_1 -> entity_1_2 [label="Let it heat up until it reaches a rolling boil"]; }
+subgraph cluster_2 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Add Salt";  actor_2_1 [label="You"];  entity_2_1 [label="Water"];  entity_2_2 [label="Salt"];  actor_2_1 -> entity_2_1 [label="Add salt to the boiling water"];  actor_2_1 -> entity_2_2 [label="Use a generous amount of salt—approximately one tablespoon for a large pot"]; }
+subgraph cluster_3 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Drop in the Pasta";  actor_3_1 [label="You"];  entity_3_1 [label="Long Pasta (e.g., spaghetti)"];  entity_3_2 [label="Shorter Pasta (e.g., penne, fusilli)"];  entity_3_3 [label="Boiling Water"];  entity_3_4 [label="Spoon or Tongs"];  actor_3_1 -> entity_3_1 [label="Carefully add by holding at the center and letting ends slowly bend into boiling water."];  actor_3_1 -> entity_3_2 [label="Pour pasta directly into boiling water."];  actor_3_1 -> entity_3_3 [label="Add pasta to the boiling water."];  actor_3_1 -> entity_3_4 [label="Use spoon or tongs to stir pasta immediately after adding it to prevent sticking, particularly in the first minute of cooking."]; }
+subgraph cluster_4 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Cook Until Al Dente";        actor_4_1 [label="You"];    entity_4_1 [label="Pasta"];    entity_4_2 [label="Package instructions"];    entity_4_3 [label="Starchy cooking water (indirectly)"];    actor_4_1 -> entity_4_1 [label="Cooking until al dente"];    actor_4_1 -> entity_4_2 [label="Testing the pasta's texture"];    actor_4_1 -> entity_4_3 [label="Determining if it is fully cooked but still firm"]; }
+subgraph cluster_5 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Save Some Pasta Water";  actor_5_1 [label="You"];  entity_5_1 [label="Pasta Water"];  entity_5_2 [label="Ladle or Measuring Cup"];  actor_5_1 -> entity_5_1 [label="Save some"];  actor_5_1 -> entity_5_2 [label="Use to scoop out pasta water"]; }
+subgraph cluster_6 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Drain the Pasta";  actor_6_1 [label="You"];  entity_6_1 [label="Pasta"];  entity_6_2 [label="Colander"];  entity_6_3 [label="Excess Water"];  actor_6_1 -> entity_6_1 [label="Drain"];  actor_6_1 -> entity_6_2 [label="Use"];  actor_6_1 -> entity_6_3 [label="Remove"]; }
+subgraph cluster_7 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Mix with Sauce";  actor_7_1 [label="You"];  entity_7_1 [label="Pasta"];  entity_7_2 [label="Sauce"];  entity_7_3 [label="Reserved Pasta Water"];  entity_7_4 [label="Pot (or Saucepan)"];    actor_7_1 -> entity_7_1 [label="Add Pasta to Sauce"];  actor_7_1 -> entity_7_2 [label="Stir Sauce"];  actor_7_1 -> entity_7_3 [label="Add Pasta Water if Needed"];  actor_7_1 -> entity_7_4 [label="Let Simmer"]; }
+subgraph cluster_8 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Serve and Enjoy";  actor_8_1 [label="You"];  entity_8_1 [label="Pasta"];  entity_8_2 [label="Extras (e.g., grated Parmesan cheese)"];  entity_8_3 [label="Chopped fresh herbs"];  entity_8_4 [label="Olive oil"];  entity_8_5 [label="Pasta and sauce mixture"];  actor_8_1 -> entity_8_1 [label="Divide onto plates or bowls"];  actor_8_1 -> entity_8_2 [label="Top with"];  actor_8_1 -> entity_8_3 [label="Top with"];  actor_8_1 -> entity_8_4 [label="Drizzle"];  actor_8_1 -> entity_8_5 [label="Serve immediately while hot"]; }
+
+    actor_1_1 -> actor_2_1 [label="followed by adding salt", ltail=cluster_1, lhead=cluster_2];
+actor_2_1 -> actor_3_1 [label="if water is adequately salted", ltail=cluster_2, lhead=cluster_3];
+actor_3_1 -> actor_4_1 [label="followed by cooking until al dente", ltail=cluster_3, lhead=cluster_4];
+actor_4_1 -> actor_5_1 [label="depends on saving pasta water", ltail=cluster_4, lhead=cluster_5];
+actor_5_1 -> actor_6_1 [label="followed by draining the pasta", ltail=cluster_5, lhead=cluster_6];
+actor_6_1 -> actor_7_1 [label="followed by mixing with sauce", ltail=cluster_6, lhead=cluster_7];
+actor_7_1 -> actor_8_1 [label="depends on thorough mixing", ltail=cluster_7, lhead=cluster_8];
+}

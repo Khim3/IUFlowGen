@@ -1,0 +1,18 @@
+digraph G {
+    rankdir=LR;
+    node_1 [label="Boil the Water"];
+    node_2 [label="Add Salt"];
+    node_3 [label="Drop in the Pasta"];
+    node_4 [label="Cook Until Al Dente"];
+    node_5 [label="Save Some Pasta Water"];
+    node_6 [label="Drain the Pasta"];
+    node_7 [label="Mix with Sauce"];
+    node_8 [label="Serve and Enjoy"];
+    node_1 -> node_2 [label="followed by adding salt"];
+    node_2 -> node_3 [label="if water is adequately salted"];
+    node_3 -> node_4 [label="followed by cooking until al dente"];
+    node_4 -> node_5 [label="depends on saving pasta water"];
+    node_5 -> node_6 [label="followed by draining the pasta"];
+    node_6 -> node_7 [label="followed by mixing with sauce"];
+    node_7 -> node_8 [label="depends on thorough mixing"];
+}

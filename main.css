@@ -1,0 +1,46 @@
+a
+/* General Page Styling */
+body { font-family: 'Arial', sans-serif;
+    background-color: #f5f7fa;
+    text-align: center;
+}
+
+h2 {
+    font-size: 26px;
+    color: #222;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Graph Container */
+#graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Graph SVG Styling */
+#graph {
+    width: auto;
+    height: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+    border: 3px solid #007acc;
+    padding: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.node:hover circle {
+    fill: #ff6600 !important;
+    stroke: white !important;
+    stroke-width: 2px !important;
+}
+
+.node text {
+    font-size: 16px;
+    font-weight: bold;
+    fill: #333;
+}
