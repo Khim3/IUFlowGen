@@ -1,8 +1,0 @@
-digraph {
-	A [label=Start]
-	B [label="Process 1"]
-	C [label=Decision]
-	A -> B
-	B -> C
-	C -> A [constraint=false]
-}
