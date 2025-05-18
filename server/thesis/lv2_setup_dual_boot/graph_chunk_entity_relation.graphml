@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d5" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="Windows">
+      <data key="d0">organization</data>
+      <data key="d1">Windows is an operating system by Microsoft that will be installed alongside Ubuntu on the dual-boot system.&lt;SEP&gt;Windows is an operating system used by many users and can be part of a dual-boot configuration with Ubuntu.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b&lt;SEP&gt;chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="Ubuntu">
+      <data key="d0">organization</data>
+      <data key="d1">Ubuntu is a free, open-source operating system developed by Canonical that can be installed with Windows in a dual-boot configuration.&lt;SEP&gt;Ubuntu is an operating system that can be installed alongside Windows in a dual boot setup.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b&lt;SEP&gt;chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="BIOS/UEFI">
+      <data key="d0">geo</data>
+      <data key="d1">BIOS and UEFI are firmware interfaces for computers; BIOS is traditional while UEFI is modern. Understanding their settings is crucial for setting up a dual boot system.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="Secure Boot">
+      <data key="d0">concept</data>
+      <data key="d1">A security standard that prevents unauthorized operating systems from loading during the startup process, which may need to be disabled when installing Ubuntu.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="GRUB bootloader">
+      <data key="d0">software</data>
+      <data key="d1">The GRUB bootloader is a program that allows users to choose between multiple installed operating systems at boot time.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="Rufus">
+      <data key="d0">organization</data>
+      <data key="d1">Rufus is a free, open-source software used for creating bootable USB drives, utilized in preparing to install Ubuntu.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="External hard drive/cloud storage">
+      <data key="d0">category</data>
+      <data key="d1">Refers to mediums recommended for backing up important data before initiating changes to the system during dual-boot setup.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="File Explorer">
+      <data key="d0">software</data>
+      <data key="d1">A file management application included with Windows, used to check disk space and manage files in preparation for partitioning for Ubuntu installation.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="Windows Disk Management">
+      <data key="d0">software</data>
+      <data key="d1">A utility in Windows that allows users to view and manage the disk drives installed on their computer. It is used to shrink partitions and make space for installing Ubuntu.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="partition">
+      <data key="d0">concept</data>
+      <data key="d1">A division of a hard drive into separate, manageable sections. Partitions are crucial when setting up a dual-boot system to allocate specific areas for each operating system.</data>
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </node>
+    <node id="GRUB">
+      <data key="d0">software</data>
+      <data key="d1">GRUB (Grand Unified Bootloader) is a bootloader program that allows the user to select which operating system to boot, particularly in dual-boot setups like Ubuntu and Windows.</data>
+      <data key="d2">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="BIOS">
+      <data key="d0">technology</data>
+      <data key="d1">BIOS (Basic Input/Output System) is firmware used during the initial startup of a computer to set hardware parameters and select the default boot device.</data>
+      <data key="d2">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="Boot-Repair">
+      <data key="d0">software</data>
+      <data key="d1">Boot-Repair is a tool that can be used from a live Ubuntu session to fix boot issues, particularly those involving GRUB not detecting installed operating systems.</data>
+      <data key="d2">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="Wi-Fi">
+      <data key="d0">technology</data>
+      <data key="d1">Wi-Fi is a technology used for wireless local area networking, important to check during system installation or troubleshooting.</data>
+      <data key="d2">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="display resolution">
+      <data key="d0">category</data>
+      <data key="d1">Display resolution refers to the clarity of text and images on a screen, which should be checked post-installation to ensure settings are correct.</data>
+      <data key="d2">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="software settings">
+      <data key="d0">category</data>
+      <data key="d1">Software settings include configurations for various programs and operating systems that may need adjustment after installation or troubleshooting.</data>
+      <data key="d2">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </node>
+    <node id="Windows/Ubuntu">
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+      <data key="d1">The GRUB bootloader is configured during Ubuntu installation to allow users to choose between Windows and Ubuntu at startup, managing access to both systems.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="USB Drive">
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+      <data key="d1">Rufus is used to create bootable USB drives by writing an ISO file onto them, which is essential for installing Ubuntu.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="Data Backup">
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+      <data key="d1">Using external hard drives or cloud services ensures data protection during the dual-boot setup process by providing a means to recover important files if needed.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="Disk Space Management">
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+      <data key="d1">File Explorer is used to check available disk space on the main hard drive before allocating space for Ubuntu installation.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="Partition Creation">
+      <data key="d2">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+      <data key="d1">Windows Disk Management allows users to shrink existing partitions and create unallocated space needed for installing Ubuntu.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <edge source="Windows" target="Ubuntu">
+      <data key="d3">9.0</data>
+      <data key="d4">Both Windows and Ubuntu are set up to run on the same machine, providing flexibility through dual-booting, allowing the user to switch between two different operating systems.</data>
+      <data key="d5">dual-boot setup, system flexibility</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="Windows" target="GRUB">
+      <data key="d3">15.0</data>
+      <data key="d4">GRUB needs to correctly identify Windows during its scan so that it can be added to the boot menu for selection alongside Ubuntu.&lt;SEP&gt;Windows must be recognized by GRUB for it to appear in the boot menu when using a dual-boot setup with Ubuntu.</data>
+      <data key="d5">operating system detection, boot menu appearance&lt;SEP&gt;operating system integration, boot menu setup</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+    <edge source="Ubuntu" target="BIOS/UEFI">
+      <data key="d3">8.0</data>
+      <data key="d4">Understanding BIOS/UEFI settings is necessary for correctly installing Ubuntu because it affects how the computer boots and recognizes bootable devices.</data>
+      <data key="d5">boot configuration, installation process</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="Ubuntu" target="Secure Boot">
+      <data key="d3">7.0</data>
+      <data key="d4">For the successful installation of Ubuntu, Secure Boot may need to be disabled in the system's firmware settings, as it can interfere with non-signed operating systems loading.</data>
+      <data key="d5">installation interference, security standard</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="Ubuntu" target="GRUB">
+      <data key="d3">8.0</data>
+      <data key="d4">Ubuntu installation requires configuring GRUB as the bootloader to allow selection between Ubuntu and Windows during system startup.</data>
+      <data key="d5">bootloader configuration, dual-boot setup</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+    <edge source="Ubuntu" target="BIOS">
+      <data key="d3">6.0</data>
+      <data key="d4">The BIOS settings can determine which operating system boots by default, and they must be configured to recognize Ubuntu as an option in a dual-boot setup.</data>
+      <data key="d5">boot priority configuration, dual-boot management</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+    <edge source="Ubuntu" target="Wi-Fi">
+      <data key="d3">5.0</data>
+      <data key="d4">After installing Ubuntu, Wi-Fi should be verified to ensure the system's networking capabilities are functioning properly.</data>
+      <data key="d5">network connectivity check, post-installation verification</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+    <edge source="Ubuntu" target="display resolution">
+      <data key="d3">6.0</data>
+      <data key="d4">Following Ubuntu installation, it is important to check and adjust the display resolution to suit user preferences or requirements.</data>
+      <data key="d5">visual settings adjustment, user experience enhancement</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+    <edge source="Ubuntu" target="software settings">
+      <data key="d3">5.0</data>
+      <data key="d4">After installing Ubuntu, software settings should be reviewed and configured according to the user's needs for optimal system performance.</data>
+      <data key="d5">configuration check, system optimization</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+    <edge source="GRUB bootloader" target="Windows/Ubuntu">
+      <data key="d3">10.0</data>
+      <data key="d4">The GRUB bootloader is configured during Ubuntu installation to allow users to choose between Windows and Ubuntu at startup, managing access to both systems.</data>
+      <data key="d5">boot management, system access</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="Rufus" target="USB Drive">
+      <data key="d3">9.0</data>
+      <data key="d4">Rufus is used to create bootable USB drives by writing an ISO file onto them, which is essential for installing Ubuntu.</data>
+      <data key="d5">boot creation, installation preparation</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="External hard drive/cloud storage" target="Data Backup">
+      <data key="d3">8.0</data>
+      <data key="d4">Using external hard drives or cloud services ensures data protection during the dual-boot setup process by providing a means to recover important files if needed.</data>
+      <data key="d5">data protection, backup solution</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="File Explorer" target="Disk Space Management">
+      <data key="d3">7.0</data>
+      <data key="d4">File Explorer is used to check available disk space on the main hard drive before allocating space for Ubuntu installation.</data>
+      <data key="d5">space assessment, partitioning preparation</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="Windows Disk Management" target="Partition Creation">
+      <data key="d3">8.0</data>
+      <data key="d4">Windows Disk Management allows users to shrink existing partitions and create unallocated space needed for installing Ubuntu.</data>
+      <data key="d5">partition resizing, system modification</data>
+      <data key="d6">chunk-5975d5208127fcf8d8f61c43db1ad41b</data>
+    </edge>
+    <edge source="GRUB" target="Boot-Repair">
+      <data key="d3">7.0</data>
+      <data key="d4">Boot-Repair is used as a solution tool when GRUB does not automatically detect installed operating systems like Windows in a dual-boot configuration with Ubuntu.</data>
+      <data key="d5">boot issue resolution, bootloader repair</data>
+      <data key="d6">chunk-bc4ba067c21dfebb1dffa1f21aebd227</data>
+    </edge>
+  </graph>
+</graphml>

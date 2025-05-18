@@ -94,7 +94,7 @@ def render_dot_to_streamlit(dot_code):
     </head>
     <body>
 
-    <h2>📌 Graphviz Visualization</h2>
+
     <div id="graph-container">
         <div id="graph"></div>
     </div>
@@ -107,8 +107,8 @@ def render_dot_to_streamlit(dot_code):
             if (datum.tag === "svg") {{
                 datum.attributes = {{
                     ...datum.attributes,
-                    width: '1000',
-                    height: '700',
+                    width: '1200',
+                    height: '800',
                 }};
 
                 const px2pt = 3 / 4;
@@ -137,7 +137,7 @@ def render_dot_to_streamlit(dot_code):
     </body>
     </html>
     """
-    return st.components.v1.html(html_code, height=700, scrolling=True)
+    return st.components.v1.html(html_code, height=800, scrolling=True)
 
 def clean_dot_code(dot_code: str) -> str:
     # Use regex to remove escaped quotes (e.g., \"Label\" → Label)

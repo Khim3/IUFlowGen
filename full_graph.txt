@@ -1,6 +1,6 @@
 digraph G {
     compound=true;
-    rankdir=TB;
+    rankdir=LR;
     bgcolor="#EDEDED"; 
     node [
         style=filled,
@@ -23,62 +23,88 @@ digraph G {
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Boil the Water";  actor_1_1 [label="You"];  entity_1_1 [label="Large pot"];  entity_1_2 [label="Water"];  entity_1_3 [label="Stove"];    actor_1_1 -> entity_1_1 [label="Fill a large pot"];  actor_1_1 -> entity_1_2 [label="Use about 4-6 cups per serving of pasta in the large pot"];  actor_1_1 -> entity_1_3 [label="Place the large pot on the stove over high heat"];  actor_1_1 -> entity_1_2 [label="Let it heat up until it reaches a rolling boil"]; }
+     label="Understand BIOS/UEFI and Secure Boot Settings";  actor_1_1 [label="You"];  entity_1_1 [label="BIOS/UEFI"];  entity_1_2 [label="Secure Boot"];  entity_1_3 [label="Firmware settings"];    actor_1_1 -> entity_1_1 [label="Understand"];  actor_1_1 -> entity_1_2 [label="Check and Disable (if necessary)"];  actor_1_1 -> entity_1_3 [label="Access and Configure"]; }
 subgraph cluster_2 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Add Salt";  actor_2_1 [label="You"];  entity_2_1 [label="Water"];  entity_2_2 [label="Salt"];  actor_2_1 -> entity_2_1 [label="Add salt to the boiling water"];  actor_2_1 -> entity_2_2 [label="Use a generous amount of salt—approximately one tablespoon for a large pot"]; }
+     label="Back Up Your Data";  actor_2_1 [label="You"];  entity_2_1 [label="Documents"];  entity_2_2 [label="Photos"];  entity_2_3 [label="Work-related files"];  entity_2_4 [label="External hard drive"];  entity_2_5 [label="Cloud storage service"];  actor_2_1 -> entity_2_1 [label="Back up"];  actor_2_1 -> entity_2_2 [label="Back up"];  actor_2_1 -> entity_2_3 [label="Back up"];  actor_2_1 -> entity_2_4 [label="Copy data to"];  actor_2_1 -> entity_2_5 [label="Copy data to"]; }
 subgraph cluster_3 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Drop in the Pasta";  actor_3_1 [label="You"];  entity_3_1 [label="Long Pasta (e.g., spaghetti)"];  entity_3_2 [label="Shorter Pasta (e.g., penne, fusilli)"];  entity_3_3 [label="Boiling Water"];  entity_3_4 [label="Spoon or Tongs"];  actor_3_1 -> entity_3_1 [label="Carefully add by holding at the center and letting ends slowly bend into boiling water."];  actor_3_1 -> entity_3_2 [label="Pour pasta directly into boiling water."];  actor_3_1 -> entity_3_3 [label="Add pasta to the boiling water."];  actor_3_1 -> entity_3_4 [label="Use spoon or tongs to stir pasta immediately after adding it to prevent sticking, particularly in the first minute of cooking."]; }
+     label="Check Windows System Requirements and Disk Space";        actor_3_1 [label="You"];    entity_3_1 [label="Windows system"];    entity_3_2 [label="File Explorer"];    entity_3_3 [label="Main hard drive (usually C:)"];    entity_3_4 [label="Properties"];    entity_3_5 [label="Win + R key combination"];    entity_3_6 [label="System summary window (msinfo32)"];    entity_3_7 [label="BIOS Mode field in system summary"];    actor_3_1 -> entity_3_1 [label="Ensure sufficient free disk space for Ubuntu"];    actor_3_1 -> entity_3_2 [label="Open File Explorer"];    actor_3_1 -> entity_3_3 [label="Right-click and select Properties to check available space"];    actor_3_1 -> entity_3_4 [label="Verify that at least 20 GB of free disk space is available, with 50 GB or more recommended"];    actor_3_1 -> entity_3_5 [label="Press to open the Run dialog box"];    actor_3_1 -> entity_3_6 [label="Open by typing msinfo32 and pressing Enter"];    actor_3_1 -> entity_3_7 [label="Check if the mode is UEFI (ideal for dual-boot setup) or Legacy (possible but requires different setup)"]; }
 subgraph cluster_4 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Cook Until Al Dente";        actor_4_1 [label="You"];    entity_4_1 [label="Pasta"];    entity_4_2 [label="Package instructions"];    entity_4_3 [label="Starchy cooking water (indirectly)"];    actor_4_1 -> entity_4_1 [label="Cooking until al dente"];    actor_4_1 -> entity_4_2 [label="Testing the pasta's texture"];    actor_4_1 -> entity_4_3 [label="Determining if it is fully cooked but still firm"]; }
+     label="Create a Partition for Ubuntu";  actor_4_1 [label="You"];  entity_4_1 [label="Main hard drive"];  entity_4_2 [label="Windows Disk Management"];  entity_4_3 [label="Unallocated space"];  actor_4_1 -> entity_4_1 [label="Find"];  actor_4_1 -> entity_4_2 [label="Open"];  actor_4_1 -> entity_4_1 [label="Right-click and Shrink Volume"];  actor_4_1 -> entity_4_3 [label="Create"]; }
 subgraph cluster_5 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Save Some Pasta Water";  actor_5_1 [label="You"];  entity_5_1 [label="Pasta Water"];  entity_5_2 [label="Ladle or Measuring Cup"];  actor_5_1 -> entity_5_1 [label="Save some"];  actor_5_1 -> entity_5_2 [label="Use to scoop out pasta water"]; }
+     label="Download Ubuntu and Create a Bootable USB Drive";  actor_5_1 [label="You"];  entity_5_1 [label="Latest LTS version of Ubuntu"];  entity_5_2 [label="ISO file"];  entity_5_3 [label="Rufus or another USB writing tool"];  entity_5_4 [label="USB drive"];  entity_5_5 [label="System (GPT for UEFI)"];  actor_5_1 -> entity_5_1 [label="Download Ubuntu"];  actor_5_1 -> entity_5_2 [label="Save to computer"];  actor_5_1 -> entity_5_3 [label="Use to create bootable USB drive"];  actor_5_1 -> entity_5_4 [label="Ensure has at least 4 GB of space"];  actor_5_1 -> entity_5_2 [label="Select in Rufus"];  actor_5_1 -> entity_5_5 [label="Match partition scheme"];  actor_5_1 -> entity_5_4 [label="Safely eject from computer"]; }
 subgraph cluster_6 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Drain the Pasta";  actor_6_1 [label="You"];  entity_6_1 [label="Pasta"];  entity_6_2 [label="Colander"];  entity_6_3 [label="Excess Water"];  actor_6_1 -> entity_6_1 [label="Drain"];  actor_6_1 -> entity_6_2 [label="Use"];  actor_6_1 -> entity_6_3 [label="Remove"]; }
+     label="Boot from the USB Drive";  actor_6_1 [label="You"];  entity_6_1 [label="Computer"];  entity_6_2 [label="Boot menu"];  entity_6_3 [label="USB drive"];  entity_6_4 [label="Ubuntu boot menu"];  actor_6_1 -> entity_6_1 [label="Inserting the bootable USB into your computer and restarting it."];  actor_6_1 -> entity_6_2 [label="Entering the boot menu by pressing an appropriate key (F12, F2, ESC, or DEL), depending on your system."];  actor_6_1 -> entity_6_3 [label="Selecting your USB device as the boot option. If two USB options are available, choosing the one marked UEFI."];  entity_6_3 -> entity_6_4 [label="Loading the Ubuntu boot menu, offering choices to either try Ubuntu or install it directly."]; }
 subgraph cluster_7 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Mix with Sauce";  actor_7_1 [label="You"];  entity_7_1 [label="Pasta"];  entity_7_2 [label="Sauce"];  entity_7_3 [label="Reserved Pasta Water"];  entity_7_4 [label="Pot (or Saucepan)"];    actor_7_1 -> entity_7_1 [label="Add Pasta to Sauce"];  actor_7_1 -> entity_7_2 [label="Stir Sauce"];  actor_7_1 -> entity_7_3 [label="Add Pasta Water if Needed"];  actor_7_1 -> entity_7_4 [label="Let Simmer"]; }
+     label="Begin the Installation Process";  actor_7_1 [label="You"];  entity_7_1 [label="Ubuntu installer"];  entity_7_2 [label="Language"];  entity_7_3 [label="Keyboard layout"];  entity_7_4 [label="Updates and third-party software"];  entity_7_5 [label="Windows Boot Manager"];  entity_7_6 [label="Unallocated space"];  entity_7_7 [label="Root partition (/)"];  entity_7_8 [label="Swap partition"];  actor_7_1 -> entity_7_1 [label="Guided through installation process"];  actor_7_1 -> entity_7_2 [label="Selecting preferred language"];  actor_7_1 -> entity_7_3 [label="Selecting preferred keyboard layout"];  actor_7_1 -> entity_7_4 [label="Choosing installation options"];  actor_7_1 -> entity_7_5 [label="Selecting installation type alongside"];  actor_7_1 -> entity_7_6 [label="Assigning unallocated space during manual setup"];  actor_7_1 -> entity_7_7 [label="Creating root partition using unallocated space"];  actor_7_1 -> entity_7_8 [label="Optionally creating swap partition"]; }
 subgraph cluster_8 {
         style=filled;
         fillcolor="#E3F2FD";
         color="#90CAF9"; 
         fontname="Helvetica-Bold";
         penwidth=2;
-     label="Serve and Enjoy";  actor_8_1 [label="You"];  entity_8_1 [label="Pasta"];  entity_8_2 [label="Extras (e.g., grated Parmesan cheese)"];  entity_8_3 [label="Chopped fresh herbs"];  entity_8_4 [label="Olive oil"];  entity_8_5 [label="Pasta and sauce mixture"];  actor_8_1 -> entity_8_1 [label="Divide onto plates or bowls"];  actor_8_1 -> entity_8_2 [label="Top with"];  actor_8_1 -> entity_8_3 [label="Top with"];  actor_8_1 -> entity_8_4 [label="Drizzle"];  actor_8_1 -> entity_8_5 [label="Serve immediately while hot"]; }
+     label="Set Up User Details and Finalize Installation";        actor_8_1 [label="You"];        entity_8_1 [label="User account"];    entity_8_2 [label="Password"];    entity_8_3 [label="Computer name"];    entity_8_4 [label="Automatic login option"];    entity_8_5 [label="Password requirement at each login"];    entity_8_6 [label="System files"];    actor_8_1 -> entity_8_1 [label="Create"];    actor_8_1 -> entity_8_2 [label="Set"];    actor_8_1 -> entity_8_3 [label="Name (optional)"];    actor_8_1 -> entity_8_4 [label="Choose"];    actor_8_1 -> entity_8_5 [label="Require"];    actor_8_1 -> entity_8_6 [label="Initiate file copying to system"]; }
+subgraph cluster_9 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Test GRUB and Boot Both Systems";        actor_9_1 [label="You"];        entity_9_1 [label="GRUB bootloader menu"];    entity_9_2 [label="BIOS settings"];    entity_9_3 [label="Ubuntu"];    entity_9_4 [label="Windows"];        actor_9_1 -> entity_9_1 [label="Select between Ubuntu or Windows"];    actor_9_1 -> entity_9_2 [label="Check if necessary for setting Ubuntu as the default boot device"];    actor_9_1 -> entity_9_3 [label="Verify Wi-Fi connectivity, display resolution, and software settings post-installation"];    actor_9_1 -> entity_9_4 [label="Ensure data and programs are intact post-boot"]; }
+subgraph cluster_10 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Troubleshoot Boot Issues if Necessary";  actor_10_1 [label="You"];  entity_10_1 [label="GRUB menu"];  entity_10_2 [label="Terminal"];  entity_10_3 [label="BIOS"];  entity_10_4 [label="Boot-Repair"];  entity_10_5 [label="Live Ubuntu Session"];  entity_10_6 [label="Command Line"];  actor_10_1 -> entity_10_1 [label="Update GRUB"];  actor_10_1 -> entity_10_2 [label="Run Command"];  actor_10_1 -> entity_10_3 [label="Check Boot Order"];  actor_10_1 -> entity_10_4 [label="Use Tool for Repair"];  actor_10_1 -> entity_10_5 [label="Access Tool"];  actor_10_1 -> entity_10_6 [label="Execute Commands Safely"]; }
+subgraph cluster_11 {
+        style=filled;
+        fillcolor="#E3F2FD";
+        color="#90CAF9"; 
+        fontname="Helvetica-Bold";
+        penwidth=2;
+     label="Maintain Your Dual Boot Setup";  actor_11_1 [label="You"];  entity_11_1 [label="Windows"];  entity_11_2 [label="Ubuntu"];  entity_11_3 [label="GRUB bootloader"];  entity_11_4 [label="Live Ubuntu USB"];  actor_11_1 -> entity_11_1 [label="Regular updates are essential for the operating system; use the standard Windows Update process."];  actor_11_1 -> entity_11_2 [label="Regular updates are essential for the operating system; run terminal commands `sudo apt update && sudo apt upgrade`."];  actor_11_1 -> entity_11_3 [label="Be prepared to repair the boot menu if a Windows upgrade overwrites it, using a live Ubuntu USB."];  actor_11_1 -> entity_11_4 [label="Essential for repairing the boot menu if needed after upgrading Windows or removing Ubuntu."]; }
 
-    actor_1_1 -> actor_2_1 [label="followed by adding salt", ltail=cluster_1, lhead=cluster_2];
-actor_2_1 -> actor_3_1 [label="if water is adequately salted", ltail=cluster_2, lhead=cluster_3];
-actor_3_1 -> actor_4_1 [label="followed by cooking until al dente", ltail=cluster_3, lhead=cluster_4];
-actor_4_1 -> actor_5_1 [label="depends on saving pasta water", ltail=cluster_4, lhead=cluster_5];
-actor_5_1 -> actor_6_1 [label="followed by draining the pasta", ltail=cluster_5, lhead=cluster_6];
-actor_6_1 -> actor_7_1 [label="followed by mixing with sauce", ltail=cluster_6, lhead=cluster_7];
-actor_7_1 -> actor_8_1 [label="depends on thorough mixing", ltail=cluster_7, lhead=cluster_8];
+    actor_1_1 -> actor_2_1 [label="when UEFI mode verified", ltail=cluster_1, lhead=cluster_2];
+actor_1_1 -> actor_3_1 [label="after checking BIOS/UEFI settings", ltail=cluster_1, lhead=cluster_3];
+actor_2_1 -> actor_4_1 [label="before resizing partitions", ltail=cluster_2, lhead=cluster_4];
+actor_3_1 -> actor_4_1 [label="after confirming sufficient disk space", ltail=cluster_3, lhead=cluster_4];
+actor_4_1 -> actor_5_1 [label="before creating bootable USB", ltail=cluster_4, lhead=cluster_5];
+actor_5_1 -> actor_6_1 [label="after creating the bootable USB", ltail=cluster_5, lhead=cluster_6];
+actor_6_1 -> actor_7_1 [label="when system starts in UEFI mode", ltail=cluster_6, lhead=cluster_7];
+actor_7_1 -> actor_8_1 [label="followed by user setup completion", ltail=cluster_7, lhead=cluster_8];
+actor_8_1 -> actor_9_1 [label="after files copied to system", ltail=cluster_8, lhead=cluster_9];
+actor_9_1 -> actor_10_1 [label="when booting issues occur", ltail=cluster_9, lhead=cluster_10];
+actor_9_1 -> actor_11_1 [label="after successful boot testing", ltail=cluster_9, lhead=cluster_11];
+actor_10_1 -> actor_11_1 [label="after resolving boot issues", ltail=cluster_10, lhead=cluster_11];
 }

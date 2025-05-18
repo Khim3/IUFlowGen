@@ -13,7 +13,7 @@ st.set_page_config(
 
 def main():
     sidebar = st.sidebar
-    st.title('Flowchart AI App :mortar_board:')
+    st.title('IUFlowGen App :mortar_board:')
     st.write('This is a system to turn documents into comprehensible flowcharts')
     st.sidebar.title(':gear: Menu Settings')
     uploaded_file = sidebar.file_uploader("Upload a PDF file", type=["pdf", 'docx'])
@@ -44,11 +44,12 @@ def main():
         # generate button
         generate_button = st.sidebar.button('Process document')
         if generate_button:
+            ## change for testing, remove when done
             output_folder = send_folder_to_remote(file_name)
             process_text(output_folder)
             raw_code = run_chain(output_folder)
             with open ("raw_code.txt", "w") as f:
-                f.write(raw_code)
+               f.write(raw_code)
             with open ('raw_code.txt', 'r') as f:
                 raw_code = f.read()
             st.session_state.output_folder = output_folder

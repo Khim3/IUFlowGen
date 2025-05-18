@@ -1,0 +1,556 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="d6" for="edge" attr.name="source_id" attr.type="string" />
+  <key id="d5" for="edge" attr.name="keywords" attr.type="string" />
+  <key id="d4" for="edge" attr.name="description" attr.type="string" />
+  <key id="d3" for="edge" attr.name="weight" attr.type="double" />
+  <key id="d2" for="node" attr.name="source_id" attr.type="string" />
+  <key id="d1" for="node" attr.name="description" attr.type="string" />
+  <key id="d0" for="node" attr.name="entity_type" attr.type="string" />
+  <graph edgedefault="undirected">
+    <node id="AWS">
+      <data key="d0">organization</data>
+      <data key="d1">AWS is a major public cloud provider offering elastic compute, managed Kubernetes orchestration, and integrated storage and monitoring stacks.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Azure">
+      <data key="d0">organization</data>
+      <data key="d1">Azure is a cloud service by Microsoft providing scalable infrastructure solutions including Kubernetes services.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Google Cloud">
+      <data key="d0">organization</data>
+      <data key="d1">Google Cloud provides public cloud environments with elastic compute resources and managed Kubernetes orchestration.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="EKS">
+      <data key="d0">technology</data>
+      <data key="d1">EKS (Amazon Elastic Kubernetes Service) is a managed service that makes it easy to run Kubernetes on AWS without needing to install and operate your own Kubernetes control plane.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="AKS">
+      <data key="d0">technology</data>
+      <data key="d1">Azure Kubernetes Service (AKS) simplifies deploying, managing, and operations of Kubernetes clusters in Azure.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="GKE">
+      <data key="d0">technology</data>
+      <data key="d1">Google Kubernetes Engine (GKE) provides a managed environment for deploying, managing, and scaling containerized applications using Google infrastructure.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="NVIDIA A100">
+      <data key="d0">technology</data>
+      <data key="d1">NVIDIA A100 is a GPU designed for data centers to accelerate AI workloads with high throughput and performance capabilities.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="H100">
+      <data key="d0">technology</data>
+      <data key="d1">H100 is another high-performance GPU by NVIDIA, suitable for demanding AI applications and on-premise deployment scenarios.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Terraform">
+      <data key="d0">technology</data>
+      <data key="d1">An infrastructure as code tool that allows users to build, change, and version infrastructure safely and efficiently.&lt;SEP&gt;Terraform is an infrastructure as code tool that allows users to build, change, and version infrastructure safely and efficiently.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Pulumi">
+      <data key="d0">technology</data>
+      <data key="d1">Pulumi is an infrastructure-as-code platform that uses general-purpose programming languages for defining cloud resources.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="AWS Secrets Manager">
+      <data key="d0">technology</data>
+      <data key="d1">A service provided by AWS to help you protect access to your applications, services, and IT resources without the upfront cost and complexity of managing your own infrastructure.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Azure Key Vault">
+      <data key="d0">technology</data>
+      <data key="d1">A cloud service for securely storing and accessing secrets in Azure cloud environments.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="NVIDIA Triton Inference Server">
+      <data key="d0">technology</data>
+      <data key="d1">A server designed by NVIDIA to serve AI models at scale, supporting dynamic batching, GPU multiplexing, and multi-model deployment.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="TensorFlow Serving">
+      <data key="d0">technology</data>
+      <data key="d1">An open-source serving system for machine learning models, optimized for production environments.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="TorchServe">
+      <data key="d0">technology</data>
+      <data key="d1">A flexible and easy-to-use tool for serving PyTorch models at scale in production settings.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Kubernetes">
+      <data key="d0">technology</data>
+      <data key="d1">An open-source platform for automating deployment, scaling, and operations of application containers across clusters of hosts.&lt;SEP&gt;Kubernetes is a platform where RBAC policies are applied to manage access control, enhance security, and configure infrastructure components within the context of deploying an AI system.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d&lt;SEP&gt;chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="IAM roles">
+      <data key="d0">concept</data>
+      <data key="d1">Identity and Access Management roles are used to define permissions for accessing AWS resources securely.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="virtual networks">
+      <data key="d0">technology</data>
+      <data key="d1">Virtual networks are isolated network environments within cloud infrastructure used for secure communication between services.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="storage classes">
+      <data key="d0">category</data>
+      <data key="d1">Storage classes in Kubernetes define storage policies, such as performance and replication, on persistent volumes.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="CRI-O">
+      <data key="d0">technology</data>
+      <data key="d1">A lightweight container runtime for Kubernetes, which implements the Kubernetes Container Runtime Interface (CRI).</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="kubeadm">
+      <data key="d0">technology</data>
+      <data key="d1">A tool provided by Kubernetes to bootstrap a minimum viable cluster that conforms to best practices.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Rancher">
+      <data key="d0">organization/technology</data>
+      <data key="d1">An open-source platform for managing containers and Kubernetes clusters at scale.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="NVMe-based storage">
+      <data key="d0">technology</data>
+      <data key="d1">A high-performance storage protocol designed for use with solid-state drives in data centers.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="LVM">
+      <data key="d0">technology</data>
+      <data key="d1">Logical Volume Manager, a device mapper that provides logical volume management for the Linux kernel.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="RAID strategies">
+      <data key="d0">category</data>
+      <data key="d1">Redundant Array of Independent Disks is used to combine multiple disk drive components into a single logical unit.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="firewall zoning">
+      <data key="d0">concept</data>
+      <data key="d1">A security practice that divides networks into zones for enhanced access control and threat mitigation.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="VPN tunneling">
+      <data key="d0">technology</data>
+      <data key="d1">Secures data transmission over public or untrusted networks by creating encrypted connections between devices.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Istio Gateway">
+      <data key="d0">technology</data>
+      <data key="d1">A service mesh component that manages traffic flow across services, including security and monitoring.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Envoy Proxy">
+      <data key="d0">technology</data>
+      <data key="d1">An open-source edge/middleware proxy designed for cloud-native applications.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="OAuth2">
+      <data key="d0">technology</data>
+      <data key="d1">An authorization framework enabling applications to obtain limited access to user accounts on HTTP services.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="JWT (JSON Web Token)">
+      <data key="d0">technology</data>
+      <data key="d1">A compact, URL-safe means of representing claims to be transferred between two parties.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Kafka">
+      <data key="d0">technology</data>
+      <data key="d1">An open-source stream-processing software platform developed by LinkedIn and donated to the Apache Software Foundation.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="RabbitMQ">
+      <data key="d0">technology</data>
+      <data key="d1">A message broker that implements the Advanced Message Queuing Protocol (AMQP).</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Redis">
+      <data key="d0">technology</data>
+      <data key="d1">An in-memory data structure store, used as a database, cache, and message broker.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Memcached">
+      <data key="d0">technology</data>
+      <data key="d1">A distributed memory caching system that speeds up dynamic web applications by alleviating database load.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="PostgreSQL">
+      <data key="d0">database technology</data>
+      <data key="d1">An open-source relational database management system emphasizing extensibility and SQL compliance.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Amazon S3">
+      <data key="d0">organization/technology</data>
+      <data key="d1">A scalable object storage service provided by Amazon Web Services (AWS).</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Azure Blob Storage">
+      <data key="d0">organization/technology</data>
+      <data key="d1">An object/blob storage solution offered by Microsoft Azure for large amounts of unstructured data.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Fluent Bit">
+      <data key="d0">technology</data>
+      <data key="d1">A lightweight log processor and forwarder for cloud-native environments.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Fluentd">
+      <data key="d0">technology</data>
+      <data key="d1">An open-source data collector designed to unify logging layers.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Elasticsearch">
+      <data key="d0">technology</data>
+      <data key="d1">A distributed, RESTful search and analytics engine capable of addressing a growing number of use cases.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Loki">
+      <data key="d0">technology</data>
+      <data key="d1">A horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="OpenTelemetry">
+      <data key="d0">concept/technology</data>
+      <data key="d1">An observability framework for cloud-native software, providing APIs and libraries to collect telemetry data.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Grafana">
+      <data key="d0">technology</data>
+      <data key="d1">A platform for monitoring and observability that allows users to create, explore, and share dashboards featuring live data.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="Horizontal Pod Autoscaler (HPA)">
+      <data key="d0">concept/technology</data>
+      <data key="d1">Automatically scales the number of pods in a replication controller, deployment, or replica set based on observed CPU utilization.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="KEDA">
+      <data key="d0">technology</data>
+      <data key="d1">The Kubernetes-based Event Driven Autoscaling system that allows for event-driven autoscaling of workloads.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="node selectors">
+      <data key="d0">concept</data>
+      <data key="d1">A Kubernetes concept used to constrain which nodes your pod is eligible to be scheduled on based on labels.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="tolerations">
+      <data key="d0">concept</data>
+      <data key="d1">Tolerations are applied to pods, and allow (but do not require) the pods to schedule onto nodes with matching taints.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="affinity rules">
+      <data key="d0">concept</data>
+      <data key="d1">Defines rules that constrain which nodes a pod is eligible to be scheduled on based on labels.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="readiness probes">
+      <data key="d0">technology</data>
+      <data key="d1">A mechanism in Kubernetes for checking the readiness of a container to accept traffic before it starts receiving requests.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="liveness probes">
+      <data key="d0">technology</data>
+      <data key="d1">Used by Kubernetes to know when to restart a container.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </node>
+    <node id="HashiCorp Vault">
+      <data key="d0">technology</data>
+      <data key="d1">A tool for managing secrets and protecting sensitive data, provided by HashiCorp.&lt;SEP&gt;HashiCorp Vault is a tool mentioned for managing secrets securely within the system's architecture.</data>
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d&lt;SEP&gt;chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Slack">
+      <data key="d0">organization</data>
+      <data key="d1">Slack is mentioned as a communication channel used in observability components to monitor AI systems.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="PagerDuty">
+      <data key="d0">organization</data>
+      <data key="d1">PagerDuty is referred to as a tool for monitoring system behavior and notifications related to AI systems.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Opsgenie">
+      <data key="d0">organization</data>
+      <data key="d1">Opsgenie is used in conjunction with other tools like Slack and PagerDuty for effective observability of AI systems.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="RBAC (Role-Based Access Control)">
+      <data key="d0">concept</data>
+      <data key="d1">RBAC is a method used in Kubernetes for restricting access to APIs, secrets, and logs, ensuring that only authorized entities can perform certain operations.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="mTLS (Mutual Transport Layer Security)">
+      <data key="d0">technology</data>
+      <data key="d1">mTLS is enforced between services to prevent eavesdropping and service spoofing as part of security measures.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Ingress Controllers">
+      <data key="d0">concept</data>
+      <data key="d1">Ingress controllers are used to filter inbound IPs and limit request rates, contributing to secure API access management in Kubernetes environments.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Sealed Secrets">
+      <data key="d0">technology</data>
+      <data key="d1">Sealed Secrets are used as part of the toolkit to manage and protect sensitive data by encrypting secrets before storing them in version control systems.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Artillery">
+      <data key="d0">tool</data>
+      <data key="d1">Artillery is a tool utilized for simulating user demand during the final validation process of an AI system, helping reveal performance boundaries.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Locust">
+      <data key="d0">tool</data>
+      <data key="d1">Locust is mentioned as a stress testing tool used to simulate user demand and evaluate the resilience and behavior of the AI system under test conditions.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="k6">
+      <data key="d0">tool</data>
+      <data key="d1">k6 is employed for stress testing to verify system performance and ensure that autoscaling logic functions correctly under simulated load.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="AppArmor">
+      <data key="d0">technology</data>
+      <data key="d1">AppArmor is a security module for Linux that restricts programs' capabilities with per-program profiles.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="SELinux (Security-Enhanced Linux)">
+      <data key="d0">technology</data>
+      <data key="d1">SELinux is a set of kernel modifications and user-space tools designed to provide fine-grained access control policies, enhancing system security by restricting processes.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="DLP Scanners (Data Loss Prevention)">
+      <data key="d0">technology</data>
+      <data key="d1">DLP scanners are used to monitor and protect data from being exfiltrated through unauthorized channels by detecting potential breaches or leaks.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Autoscaling Logic">
+      <data key="d0">concept</data>
+      <data key="d1">Autoscaling logic refers to the mechanisms and rules that automatically adjust resources in response to system load, ensuring optimal performance and resource utilization.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="Trace Analysis">
+      <data key="d0">event</data>
+      <data key="d1">End-to-end trace analysis involves examining the entire workflow of a process or transaction across different components to identify bottlenecks and inefficiencies.</data>
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </node>
+    <node id="on-premise deployment">
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+      <data key="d1">The NVIDIA A100 GPU is used in on-premise deployments to provide high-performance computing resources.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="infrastructure management">
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+      <data key="d1">Terraform is used for codifying and managing cloud infrastructure to ensure reproducibility and auditability.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="security integration">
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+      <data key="d1">Used to securely store and manage secrets within AWS cloud environments, enhancing security protocols.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="model serving platform">
+      <data key="d2">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+      <data key="d1">The NVIDIA Triton server is chosen for its capabilities in dynamic batching and GPU multiplexing during model deployment.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="Slack, PagerDuty, Opsgenie">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">These organizations provide communication and monitoring channels crucial for validating the behavior of AI systems under realistic conditions.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="observability tools in AI systems">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">These organizations provide communication and monitoring channels crucial for validating the behavior of AI systems under realistic conditions.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="RBAC &amp; Security">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">Kubernetes applies RBAC policies to manage access control, enhancing security within the deployment of an AI system.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="mTLS">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">mTLS is enforced between services as a security measure to prevent eavesdropping and service spoofing.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="services communication">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">mTLS is enforced between services as a security measure to prevent eavesdropping and service spoofing.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="HashiCorp Vault, Sealed Secrets">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">These tools are used to manage secrets securely, playing a critical role in protecting sensitive data within the system.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="secret management">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">These tools are used to manage secrets securely, playing a critical role in protecting sensitive data within the system.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="Artillery, Locust, k6">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">These tools simulate user demand for stress testing during the final validation phase to ensure the AI system's performance and reliability.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="system validation and testing">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">These tools simulate user demand for stress testing during the final validation phase to ensure the AI system's performance and reliability.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="AppArmor, SELinux">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">Both AppArmor and SELinux are employed on nodes to restrict privileged operations and enhance system security by enforcing strict access control policies.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="node security enhancement">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">Both AppArmor and SELinux are employed on nodes to restrict privileged operations and enhance system security by enforcing strict access control policies.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="DLP Scanners">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">DLP scanners are implemented to prevent sensitive data from being exfiltrated through unauthorized inputs or outputs, maintaining data integrity and confidentiality.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="data exfiltration prevention">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">DLP scanners are implemented to prevent sensitive data from being exfiltrated through unauthorized inputs or outputs, maintaining data integrity and confidentiality.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="system performance optimization">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">Autoscaling logic is verified under load to ensure it triggers correctly, optimizing system performance by dynamically adjusting resources according to demand.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <node id="bottleneck identification">
+      <data key="d2">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+      <data key="d1">End-to-end trace analysis is conducted during validation to ensure no bottlenecks exist across the inference path, facilitating smooth and efficient data processing.</data>
+      <data key="d0">UNKNOWN</data>
+    </node>
+    <edge source="AWS" target="EKS">
+      <data key="d3">9.0</data>
+      <data key="d4">EKS is a managed Kubernetes service provided by AWS, facilitating the deployment of Kubernetes clusters.</data>
+      <data key="d5">cloud services, Kubernetes orchestration</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="Azure" target="AKS">
+      <data key="d3">8.0</data>
+      <data key="d4">AKS offers managed Kubernetes solutions on Azure, simplifying cluster management.</data>
+      <data key="d5">cloud computing, Kubernetes management</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="Google Cloud" target="GKE">
+      <data key="d3">9.0</data>
+      <data key="d4">GKE provides a fully-managed environment for deploying, managing, and scaling applications using Google infrastructure.</data>
+      <data key="d5">Kubernetes service, cloud platforms</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="NVIDIA A100" target="on-premise deployment">
+      <data key="d3">8.0</data>
+      <data key="d4">The NVIDIA A100 GPU is used in on-premise deployments to provide high-performance computing resources.</data>
+      <data key="d5">GPU capabilities, data processing</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="H100" target="on-premise deployment">
+      <data key="d3">7.0</data>
+      <data key="d4">Similar to the A100, H100 GPUs are utilized for demanding AI workloads in on-premises setups.</data>
+      <data key="d5">GPU technology, performance optimization</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="Terraform" target="infrastructure management">
+      <data key="d3">9.0</data>
+      <data key="d4">Terraform is used for codifying and managing cloud infrastructure to ensure reproducibility and auditability.</data>
+      <data key="d5">infrastructure as code, resource provisioning</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="Pulumi" target="infrastructure management">
+      <data key="d3">8.0</data>
+      <data key="d4">Like Terraform, Pulumi provides tools for defining and managing infrastructure using programming languages.</data>
+      <data key="d5">cloud resources, development flexibility</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="AWS Secrets Manager" target="security integration">
+      <data key="d3">8.0</data>
+      <data key="d4">Used to securely store and manage secrets within AWS cloud environments, enhancing security protocols.</data>
+      <data key="d5">secret management, security compliance</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="Azure Key Vault" target="security integration">
+      <data key="d3">8.0</data>
+      <data key="d4">Helps protect access to applications by managing secrets and other sensitive data in Azure.</data>
+      <data key="d5">key management, secure storage</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="NVIDIA Triton Inference Server" target="model serving platform">
+      <data key="d3">9.0</data>
+      <data key="d4">The NVIDIA Triton server is chosen for its capabilities in dynamic batching and GPU multiplexing during model deployment.</data>
+      <data key="d5">AI model serving, multi-model support</data>
+      <data key="d6">chunk-2619b87c8d1b34cd9fa3a982f5cecd9d</data>
+    </edge>
+    <edge source="Kubernetes" target="RBAC &amp; Security">
+      <data key="d3">8.0</data>
+      <data key="d4">Kubernetes applies RBAC policies to manage access control, enhancing security within the deployment of an AI system.</data>
+      <data key="d5">access control, security, Kubernetes environment</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="Autoscaling Logic" target="system performance optimization">
+      <data key="d3">8.0</data>
+      <data key="d4">Autoscaling logic is verified under load to ensure it triggers correctly, optimizing system performance by dynamically adjusting resources according to demand.</data>
+      <data key="d5">resource management, scalability</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="Trace Analysis" target="bottleneck identification">
+      <data key="d3">7.0</data>
+      <data key="d4">End-to-end trace analysis is conducted during validation to ensure no bottlenecks exist across the inference path, facilitating smooth and efficient data processing.</data>
+      <data key="d5">performance optimization, workflow efficiency</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="Slack, PagerDuty, Opsgenie" target="observability tools in AI systems">
+      <data key="d3">9.0</data>
+      <data key="d4">These organizations provide communication and monitoring channels crucial for validating the behavior of AI systems under realistic conditions.</data>
+      <data key="d5">communication, monitoring, observability</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="mTLS" target="services communication">
+      <data key="d3">9.0</data>
+      <data key="d4">mTLS is enforced between services as a security measure to prevent eavesdropping and service spoofing.</data>
+      <data key="d5">security, service integrity</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="HashiCorp Vault, Sealed Secrets" target="secret management">
+      <data key="d3">8.0</data>
+      <data key="d4">These tools are used to manage secrets securely, playing a critical role in protecting sensitive data within the system.</data>
+      <data key="d5">data security, encryption</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="Artillery, Locust, k6" target="system validation and testing">
+      <data key="d3">10.0</data>
+      <data key="d4">These tools simulate user demand for stress testing during the final validation phase to ensure the AI system's performance and reliability.</data>
+      <data key="d5">stress testing, performance evaluation, scalability</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="AppArmor, SELinux" target="node security enhancement">
+      <data key="d3">8.0</data>
+      <data key="d4">Both AppArmor and SELinux are employed on nodes to restrict privileged operations and enhance system security by enforcing strict access control policies.</data>
+      <data key="d5">security, node protection</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+    <edge source="DLP Scanners" target="data exfiltration prevention">
+      <data key="d3">9.0</data>
+      <data key="d4">DLP scanners are implemented to prevent sensitive data from being exfiltrated through unauthorized inputs or outputs, maintaining data integrity and confidentiality.</data>
+      <data key="d5">data security, leak prevention</data>
+      <data key="d6">chunk-cdbb0665edb062604c31efc120bfbeff</data>
+    </edge>
+  </graph>
+</graphml>
