@@ -1,0 +1,12 @@
+pyyaml
+paramiko
+scp
+shutilwhich 
+json5    
+streamlit
+langchain
+langchain-community
+langchain-ollama
+pypdfium2
+requests
+Pillow
