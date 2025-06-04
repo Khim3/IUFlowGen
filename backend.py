@@ -9,28 +9,69 @@ import pypdfium2 as pdfium
 import requests
 import streamlit as st
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
+from dotenv import load_dotenv
 
+load_dotenv()
 with open("./main.css",encoding="utf-8") as f:
     style_file_content = f.read()
 
-def load_config(file_path = 'config.yaml'):
+
+def load_config(file_path='config.yaml'):
     with open(file_path, 'r') as f:
-        return yaml.safe_load(f)
+        config = yaml.safe_load(f)
+
+    # Inject passwords from environment variables
+    config['servers']['intermediate']['password'] = os.getenv('INTERMEDIATE_PASS')
+    config['servers']['main']['password'] = os.getenv('MAIN_PASS')
+    return config
 
 config = load_config()
 
-def create_ssh_client(ip, username, password):
+
+jump_info = config['servers']['intermediate']
+main_info = config['servers']['main']
+
+def create_ssh_client():
     """Creates and returns an SSH client connected to the specified server."""
     try:
-        client = paramiko.SSHClient()
-        client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        client.connect(ip, username=username, password=password)
-        return client
+        jump_info = config['servers']['intermediate']
+        main_info = config['servers']['main']
+
+        # === Step 1: Connect to Intermediate (Jump) Server ===
+        jump_client = paramiko.SSHClient()
+        jump_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        jump_client.connect(
+            hostname=jump_info['ip'],
+            username=jump_info['user'],
+            password=jump_info['password']
+        )
+
+        # === Step 2: Open Channel to Main Server ===
+        jump_transport = jump_client.get_transport()
+        channel = jump_transport.open_channel(
+            "direct-tcpip",
+            (main_info['ip'], 22),
+            ("127.0.0.1", 0)
+        )
+
+        # === Step 3: Connect to Main Server Through the Channel ===
+        main_client = paramiko.SSHClient()
+        main_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        main_client.connect(
+            hostname=main_info['ip'],
+            username=main_info['user'],
+            password=main_info['password'],
+            sock=channel
+        )
+
+        # Optional: keep jump_client attached to main_client for closing later
+        main_client._jump_client = jump_client 
+        return main_client
     except Exception as e:
-        print(f"Failed to connect: {e}")
+        print(f"[ERROR] SSH connection failed: {e}")
         return None
     
-ssh_client = create_ssh_client(config['server']['ip'], config['server']['user'], config['server']['password'])
+ssh_client = create_ssh_client()
 
 def send_folder_to_remote(file_name):
     """Connects to a remote server via SSH and copies a local folder to a remote directory."""
@@ -405,3 +446,6 @@ def beatify_dot_code(dot_code):
         dot_code
     )
     return dot_code
+
+if __name__ == "__main__":
+    create_ssh_client()

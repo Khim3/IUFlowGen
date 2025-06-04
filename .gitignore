@@ -1,13 +1,13 @@
 test.ipynb
+.env
 
 # pycache files
 __pycache__/
 # server files
-./server/__pycache__/
-*.pyc
-./server/step_chain.ipynb
-./server/step_chain copy.ipynb
-./server/test_visual.ipynb
-./server/test.ipynb
-./server/top5.ipynb
-./server/lightrag.log
+# Ignore Python cache files
+server/__pycache__/
+server/*.pyc
+
+# Ignore specific Jupyter notebooks and logs
+server/*.ipynb
+server/test_visual.py
