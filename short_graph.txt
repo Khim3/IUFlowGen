@@ -1,26 +1,38 @@
 digraph G {
-    rankdir=LR;
-    node_1 [label="Data Persistence and Management"];
-    node_2 [label="Disaster Recovery and Multi-Region Deployment"];
-    node_4 [label="Containerization"];
-    node_5 [label="Orchestration with Kubernetes"];
-    node_6 [label="Service Discovery and Routing"];
-    node_7 [label="API Gateway and External Access"];
-    node_8 [label="Observability"];
-    node_9 [label="Security"];
-    node_10 [label="CI/CD and Deployment Strategies"];
-    node_11 [label="Resilience and Failover"];
-    node_1 -> node_2 [label="followed by multi-region deployment"];
-    node_5 -> node_6 [label="followed by service discovery routing"];
-    node_7 -> node_8 [label="followed by observability configuration"];
-    node_9 -> node_10 [label="depends on security enforcement"];
-    node_11 -> node_1 [label="followed by data persistence and management"];
-    node_1 -> node_10 [label="If stateful behavior is required"];
-    node_4 -> node_5 [label="When external exposure is needed"];
-    node_5 -> node_6 [label="Followed by observability configuration"];
-    node_6 -> node_7 [label="Follows metrics setup with observability tools"];
-    node_7 -> node_8 [label="Followed by deployment automation verification"];
-    node_8 -> node_9 [label="Merges after observability complete"];
-    node_9 -> node_10 [label="If persistence is ensured"];
-    node_10 -> node_11 [label="Requires disaster recovery planning"];
+    rankdir=TB;
+    bgcolor="#EDEDED"; 
+    node [
+        style=filled,
+        fillcolor="#FFF3E0",
+        color="#FFB74D",  
+        fontname="Helvetica",
+    ];
+
+    edge [
+        fontname="Helvetica",
+        color="#1976D2",   
+        penwidth=2,
+        arrowsize=1.2,
+    ];
+    
+    node_1 [label="Choose Infrastructure (Cloud or On-Prem)"];
+    node_2 [label="Provision Cloud Infrastructure"];
+    node_3 [label="Set Up Bare-Metal or VMs"];
+    node_4 [label="Select Model Serving Platform"];
+    node_5 [label="Deploy Inference Controller"];
+    node_6 [label="Set Up Input Channels"];
+    node_7 [label="Set Up Output & Storage Systems"];
+    node_8 [label="Install Metrics & Addons"];
+    node_9 [label="Configure RBAC & Security"];
+    node_10 [label="Validate the AI System"];
+    node_1 -> node_2 [label="if cloud deployment selected"];
+    node_1 -> node_3 [label="if on-premise approach chosen"];
+    node_2 -> node_4 [label="after cloud infrastructure provisioned"];
+    node_3 -> node_4 [label="after bare-metal setup complete"];
+    node_4 -> node_5 [label="when model serving ready"];
+    node_5 -> node_6 [label="followed by input path configuration"];
+    node_6 -> node_7 [label="after ingress paths enabled"];
+    node_7 -> node_8 [label="followed by observability tool deployment"];
+    node_8 -> node_9 [label="after metrics installed"];
+    node_9 -> node_10 [label="after security controls applied"];
 }
