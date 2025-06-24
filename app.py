@@ -58,6 +58,7 @@ def main():
             st.sidebar.success("Processing completed!")
         if view_chart and "dot_code" in st.session_state:
             dot= convert_clusters_to_nodes(st.session_state.dot_code)
+            dot = update_shapes_and_add_start_end(dot)
             full_code = st.session_state.dot_code
             if chart_mode == "detailed":
                 full_code = beatify_dot_code(full_code)

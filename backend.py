@@ -1,12 +1,9 @@
-import yaml, os, paramiko, re
+import yaml, os, paramiko, re, json, shutil
 from scp import SCPClient
-import shutil
-import json
 import streamlit as st
-import re
 from langchain_ollama import ChatOllama
 import pypdfium2 as pdfium
-import requests
+from collections import defaultdict
 import streamlit as st
 from langchain.schema import HumanMessage, SystemMessage, AIMessage
 from dotenv import load_dotenv
@@ -446,6 +443,69 @@ def beatify_dot_code(dot_code):
         dot_code
     )
     return dot_code
+
+def update_shapes_and_add_start_end(dot_code):
+    lines = dot_code.splitlines()
+    outdegree = defaultdict(int)
+    indegree = defaultdict(int)
+    all_nodes = set()
+
+    # First pass: collect edges and degrees
+    for line in lines:
+        edge_match = re.match(r'\s*(node_\d+)\s*->\s*(node_\d+)', line)
+        if edge_match:
+            src, dst = edge_match.groups()
+            outdegree[src] += 1
+            indegree[dst] += 1
+            all_nodes.update([src, dst])
+
+    # Second pass: update node definitions
+    new_lines = []
+    for line in lines:
+        if '->' in line:
+            new_lines.append(line)
+            continue
+
+        node_match = re.match(r'\s*(node_\d+)\s*\[label="([^"]+)"\s*(, shape=\w+)?\s*\];?', line)
+        if node_match:
+            name, label, _ = node_match.groups()
+            all_nodes.add(name)
+
+            if outdegree[name] > 1:
+                shape = 'diamond'
+                width_attr = ', width=7'
+            elif indegree[name] > 1:
+                shape = 'invtriangle'
+                width_attr = ', width=7'
+            else:
+                shape = 'box'
+                width_attr = ', width=4'
+
+            new_lines.append(f'    {name} [label="{label}", shape={shape}, fixedsize=true{width_attr}];')
+        else:
+            new_lines.append(line)
+
+    # Find start and end nodes
+    start_nodes = [n for n in all_nodes if indegree[n] == 0]
+    end_nodes = [n for n in all_nodes if outdegree[n] == 0]
+
+    # Reconstruct DOT body
+    body = "\n".join(new_lines)
+    if body.strip().endswith('}'):
+        body = body.strip()[:-1].rstrip()
+
+    # Add start node
+    body += '\n    start [label="Start", shape=oval, fixedsize=false];'
+    for start in start_nodes:
+        body += f'\n    start -> {start};'
+
+    # Add end node
+    body += '\n    end [label="End", shape=oval, fixedsize=false];'
+    for end in end_nodes:
+        body += f'\n    {end} -> end;'
+
+    body += '\n}'
+    return body
 
 if __name__ == "__main__":
     create_ssh_client()
