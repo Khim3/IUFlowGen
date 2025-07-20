@@ -28,3 +28,6 @@ server/lv1_*/
 server/lv2_*/
 server/lv3_*/
 server/lv4_*/
+# Ignore sys and os files
+sys
+os
