@@ -360,7 +360,7 @@ def identify_relations(step_details, step_names):
     3. Add nodes:
     - For Actor (use 'You' if 'None'): 'actor_X [label="Actor"];' 
     - For each Entity: 'entity_X_Y [label="Entity"];'
-    4. Add edges from relationships in the format 'From: <actor> To: <entity> Label: <action>' from Relevant Info:
+    4. Add edges from relationships in the format 'From: <actor> To: <entity> Label: <action>'  :
     - '<actor_X> -> <entity_X_Y> [label="Action"];'
     5. Use sequential numbering for clusters (cluster_1, cluster_2, etc.).
     6. Use unique node IDs within each subgraph (e.g., actor_1, entity_1_1, info_1).
