@@ -3,11 +3,28 @@ test.ipynb
 
 # pycache files
 __pycache__/
+# Ignore folder 
+lv*/
 # server files
 # Ignore Python cache files
 server/__pycache__/
 server/*.pyc
 
-# Ignore specific Jupyter notebooks and logs
+# Ignore all Jupyter notebooks in server/
 server/*.ipynb
+
+# Ignore specific test files
 server/test_visual.py
+server/test_*.py
+
+# Ignore a backup script
+server/visualizer_backup.py
+
+# Ignore all lv* folders inside server/
+server/lv*/
+
+# (Optional) If you want to ignore only specific levels like lv1, lv2, etc., you could do:
+server/lv1_*/
+server/lv2_*/
+server/lv3_*/
+server/lv4_*/
