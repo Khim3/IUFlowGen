@@ -31,3 +31,7 @@ server/lv4_*/
 # Ignore sys and os files
 sys
 os
+# Ignore txt files
+full_graph.txt 
+raw_code.txt 
+short_graph.txt
